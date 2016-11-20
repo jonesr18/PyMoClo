@@ -1,0 +1,105 @@
+LOCUS       pL0-3.1_Inert           2271 bp    DNA     circular UNA 26-AUG-2016
+DEFINITION  3 Inert.
+ACCESSION   urn.local...5v-68irlzz
+VERSION     urn.local...5v-68irlzz
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+FEATURES             Location/Qualifiers
+     misc_feature    145..168
+                     /created_by="User"
+                     /label="Pamp"
+                     /note="Geneious type: promoter prokaryotic"
+     misc_feature    complement(160..180)
+                     /Mismatches=0
+                     /created_by="primer3"
+                     /annotation_group="813389225541376cad8dab7-032d-4a9c-817d-
+                     81ebb570d81c"
+                     /%GC="47.6"
+                     /Tm="56.4"
+                     /Hairpin_Tm="None"
+                     /Self_Dimer_Tm="13.2"
+                     /Sequence="CAGGGTTATTGTCTCATGAGC"
+                     /label="JH856R"
+                     /note="Geneious type: primer_bind_reverse"
+     CDS             215..1225
+                     /label="Sm/Sp no DraIII"
+     rep_origin      complement(1320..2002)
+                     /created_by="User"
+                     /label="ColE1 origin"
+     rep_origin      1984
+                     /label="ORI"
+     primer_bind     2084..2103
+                     /Sequence="ATTACCGCCTTTGAGTGAGC"
+                     /Hairpin_Tm="None"
+                     /Tm="58.3"
+                     /Self_Dimer_Tm="None"
+                     /%GC="50.0"
+                     /created_by="primer3"
+                     /label="G00101"
+     protein_bind    2225..2230
+                     /created_by="User"
+                     /label="BsaI Bind"
+     misc_feature    2225..2230
+                     /Recognition_pattern="GGTCTC(1/5)"
+                     /annotation_group="GGTCTC"
+                     /label="BsaI"
+                     /note="Geneious type: restriction site"
+     gg_overhang     2232..2235
+                     /created_by="User"
+                     /label="pL0 G-3"
+     3'UTR           2236..2255
+                     /created_by="User"
+                     /label="Inert"
+     gg_overhang     2256..2259
+                     /created_by="User"
+                     /label="pL0 3-T"
+     protein_bind    complement(2261..2266)
+                     /created_by="User"
+                     /label="BsaI Bind"
+     misc_feature    complement(2261..2266)
+                     /Recognition_pattern="GGTCTC(1/5)"
+                     /annotation_group="GGTCTC"
+                     /label="BsaI"
+                     /note="Geneious type: restriction site"
+ORIGIN      
+        1 gtggctcttc agtggacgaa agggcctcgt gatacgccta tttttatagg ttaatgtcat
+       61 gataataatg gtttcttaga cgtcaggtgg cacttttcgg ggaaatgtgc gcggaacccc
+      121 tatttgttta tttttctaaa tacattcaaa tatgtatccg ctcatgagac aataaccctg
+      181 ataaatgctt caataatatt gaaaaaggaa gagtatgcgc tcacgcaact ggtccagaac
+      241 cttgaccgaa cgcagcggtg gtaacggcgc agtggcggtt ttcatggctt gttatgactg
+      301 tttttttggg gtacagtcta tgcctcgggc atccaagcag caagcgcgtt acgccgtggg
+      361 tcgatgtttg atgttatgga gcagcaacga tgttacgcag cagggcagtc gccctaaaac
+      421 aaagttaaac atcatgaggg aagcggtgat cgccgaagta tcgactcaac tatcagaggt
+      481 agttggcgtc atcgagcgcc atctcgaacc gacgttgctg gccgtacatt tgtacggctc
+      541 cgcagtggat ggcggcctga agccacacag cgatattgat ttgctggtta cggtgaccgt
+      601 aaggcttgat gaaacaacgc ggcgagcttt gatcaacgac cttttggaaa cttcggcttc
+      661 ccctggagag agcgagattc tccgcgctgt agaagtcacc attgttgtgc acgacgacat
+      721 cattccgtgg cgttatccag ctaagcgcga actgcaattt ggagaatggc agcgcaatga
+      781 cattcttgca ggtatcttcg agccagccac gatcgacatt gatctggcta tcttgctgac
+      841 aaaagcaaga gaacatagcg ttgccttggt aggtccagcg gcggaggaac tctttgatcc
+      901 ggttcctgaa caggatctat ttgaggcgct aaatgaaacc ttaacgctat ggaactcgcc
+      961 gcccgactgg gctggcgatg agcgaaatgt agtgcttacg ttgtcccgca tttggtacag
+     1021 cgcagtaacc ggcaaaatcg cgccgaagga tgtcgctgcc gactgggcaa tggagcgcct
+     1081 gccggcccag tatcagcccg tcatacttga agctagacag gcttatcttg gacaagaaga
+     1141 agatcgcttg gcctcgcgcg cagatcagtt ggaagaattt gtccattacg taaaaggcga
+     1201 gatcaccaag gtagtcggca aataactgtc agaccaagtt tactcatata tactttagat
+     1261 tgatttaaaa cttcattttt aatttaaaag gatctaggtg aagatccttt ttgataatct
+     1321 catgaccaaa atcccttaac gtgagttttc gttccactga gcgtcagacc ccgtagaaaa
+     1381 gatcaaagga tcttcttgag atcctttttt tctgcgcgta atctgctgct tgcaaacaaa
+     1441 aaaaccaccg ctaccagcgg tggtttgttt gccggatcaa gagctaccaa ctctttttcc
+     1501 gaaggtaact ggcttcagca gagcgcagat accaaatact gtccttctag tgtagccgta
+     1561 gttaggccac cacttcaaga actctgtagc accgcctaca tacctcgctc tgctaatcct
+     1621 gttaccagtg gctgctgcca gtggcgataa gtcgtgtctt accgggttgg actcaagacg
+     1681 atagttaccg gataaggcgc agcggtcggg ctgaacgggg ggttcgtgca cacagcccag
+     1741 cttggagcga acgacctaca ccgaactgag atacctacag cgtgagctat gagaaagcgc
+     1801 cacgcttccc gaagggagaa aggcggacag gtatccggta agcggcaggg tcggaacagg
+     1861 agagcgcacg agggagcttc cagggggaaa cgcctggtat ctttatagtc ctgtcgggtt
+     1921 tcgccacctc tgacttgagc gtcgattttt gtgatgctcg tcaggggggc ggagcctatg
+     1981 gaaaaacgcc agcaacgcgg cctttttacg gttcctggcc ttttgctggc cttttgctca
+     2041 catgttcttt cctgcgttat cccctgattc tgtggataac cgtattaccg cctttgagtg
+     2101 agctgatacc gctcgccgca gccgaacgac cgagcgcagc gagtcagtga gcgaggaagc
+     2161 ggaagagcgc ccaatacgca aaccgcctct ccccgcgcgt tggccgattc attaatcact
+     2221 ctgtggtctc agcttccact ggattgtaca attaccaact gagaccacga a
+//

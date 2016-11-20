@@ -1,0 +1,257 @@
+LOCUS       pL0-G_mKate2            2962 bp    DNA     circular UNA 26-AUG-2016
+DEFINITION  G mKate2.
+ACCESSION   urn.local...61-4tnxm8z
+VERSION     urn.local...61-4tnxm8z
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+FEATURES             Location/Qualifiers
+     misc_feature    145..168
+                     /created_by="User"
+                     /label="Pamp"
+                     /note="Geneious type: promoter prokaryotic"
+     misc_feature    complement(160..180)
+                     /Mismatches=0
+                     /created_by="primer3"
+                     /annotation_group="806282442501476e13327f0-174a-403e-9024-
+                     a011551f4a2d"
+                     /%GC="47.6"
+                     /Tm="56.4"
+                     /Hairpin_Tm="None"
+                     /Self_Dimer_Tm="13.2"
+                     /Sequence="CAGGGTTATTGTCTCATGAGC"
+                     /label="JH856R"
+                     /note="Geneious type: primer_bind_reverse"
+     CDS             215..1225
+                     /label="Sm/Sp no DraIII"
+     rep_origin      complement(1320..2002)
+                     /created_by="User"
+                     /label="ColE1 origin"
+     rep_origin      1984
+                     /label="ORI"
+     primer_bind     2084..2103
+                     /created_by="User"
+                     /Sequence="ATTACCGCCTTTGAGTGAGC"
+                     /label="G00101"
+     misc_feature    complement(2223..2241)
+                     /Sequence="GGTGGCACCTTGAGACCAC"
+                     /Hairpin_Tm="42.2"
+                     /Tm="60.6"
+                     /Self_Dimer_Tm="29.2"
+                     /%GC="63.2"
+                     /created_by="primer3"
+                     /Extension="CGGTTTTGCTTGCAT"
+                     /modified_by="User"
+                     /label="RJ_00079Ra"
+                     /note="Geneious type: primer_bind_reverse"
+     protein_bind    2225..2230
+                     /created_by="User"
+                     /label="BsaI Bind"
+     misc_feature    2225..2230
+                     /Recognition_pattern="GGTCTC(1/5)"
+                     /annotation_group="GGTCTC"
+                     /label="BsaI"
+                     /note="Geneious type: restriction site"
+     misc_feature    complement(2226..2244)
+                     /created_by="User"
+                     /Sequence="CATGGTGGCACCTTGAGAC"
+                     /Hairpin_Tm="44.0"
+                     /Tm="58.4"
+                     /Self_Dimer_Tm="36.5"
+                     /%GC="57.9"
+                     /created_by="primer3"
+                     /Extension="GTTTGCTCCACTTTCCTCC"
+                     /modified_by="User"
+                     /label="RJ_00116Ra"
+                     /note="Geneious type: primer_bind_reverse"
+     misc_feature    complement(2226..2244)
+                     /created_by="User"
+                     /Sequence="CATGGTGGCACCTTGAGAC"
+                     /Hairpin_Tm="44.0"
+                     /Tm="58.4"
+                     /Self_Dimer_Tm="36.5"
+                     /%GC="57.9"
+                     /created_by="primer3"
+                     /Extension="CGAGGAGTGGATTTGGAATGGGTTTCCC"
+                     /modified_by="User"
+                     /label="RJ_00117Ra"
+                     /note="Geneious type: primer_bind_reverse"
+     gg_overhang     2232..2235
+                     /created_by="User"
+                     /label="pL0 5-G"
+     ligation        2232..2235
+                     /label="Ligation"
+     motif           2236..2241
+                     /created_by="User"
+                     /label="Kozak"
+     misc_feature    2240..2245
+                     /Recognition_pattern="C^CATGG"
+                     /annotation_group="CCATGG"
+                     /label="NcoI"
+                     /note="Geneious type: restriction site"
+     CDS             2242..2946
+                     /created_by="User"
+                     /label="mKate2"
+     primer_bind     2242..2263
+                     /Sequence="ATGGTGAGCGAGCTGATTAAGG"
+                     /Hairpin_Tm="None"
+                     /Tm="60.5"
+                     /Self_Dimer_Tm="None"
+                     /%GC="50.0"
+                     /created_by="primer3"
+                     /Extension="TGGAGCAAACTCAGC"
+                     /modified_by="User"
+                     /label="RJ_00079Fa"
+     domain          2245..2943
+                     /created_by="User"
+                     /label="mKate2"
+     primer_bind     2245..2265
+                     /Sequence="GTGAGCGAGCTGATTAAGGAG"
+                     /Hairpin_Tm="None"
+                     /Tm="58.5"
+                     /Self_Dimer_Tm="None"
+                     /%GC="52.4"
+                     /Extension="GAAAGTGGAGCAAACTCAGC"
+                     /modified_by="User"
+                     /label="RJ_00116Fc"
+     primer_bind     2245..2265
+                     /Sequence="GTGAGCGAGCTGATTAAGGAG"
+                     /Hairpin_Tm="None"
+                     /Tm="58.5"
+                     /Self_Dimer_Tm="None"
+                     /%GC="52.4"
+                     /created_by="primer3"
+                     /Extension="CAAATCCACTCCTCGGCCTTGATTCTACA"
+                     /modified_by="User"
+                     /label="RJ_00117Fa"
+     misc_feature    complement(2918..2943)
+                     /Sequence="ATTAAGTTTGTGCCCCAGTTTGCTAG"
+                     /Hairpin_Tm="None"
+                     /Tm="62.2"
+                     /Self_Dimer_Tm="None"
+                     /%GC="42.3"
+                     /created_by="primer3"
+                     /Extension="CGAGGAGTGGATTTGGAATGGGTTTCCC"
+                     /modified_by="User"
+                     /label="RJ_00170Ra"
+                     /note="Geneious type: primer_bind_reverse"
+     misc_feature    complement(2924..2943)
+                     /Sequence="ATTAAGTTTGTGCCCCAGTT"
+                     /Hairpin_Tm="None"
+                     /Tm="55.4"
+                     /Self_Dimer_Tm="None"
+                     /%GC="40.0"
+                     /Extension="TTTTCGCTTTTTCTTTGGGGA"
+                     /modified_by="User"
+                     /label="RJ_00081Ra"
+                     /note="Geneious type: primer_bind_reverse"
+     misc_feature    complement(2924..2943)
+                     /Sequence="ATTAAGTTTGTGCCCCAGTT"
+                     /Hairpin_Tm="None"
+                     /Tm="55.4"
+                     /Self_Dimer_Tm="None"
+                     /%GC="40.0"
+                     /created_by="primer3"
+                     /Extension="CAGCCTCTCCAGAGGGGGCAAGGA"
+                     /modified_by="User"
+                     /label="RJ_00082Ra"
+                     /note="Geneious type: primer_bind_reverse"
+     primer_bind     2944..2
+                     /created_by="User"
+                     /Sequence="TGAGCTTTGAGACCACGAAGT"
+                     /Hairpin_Tm="50.5"
+                     /Tm="59.6"
+                     /Self_Dimer_Tm="1.1"
+                     /%GC="47.6"
+                     /created_by="primer3"
+                     /Extension="AAGAAAAAGCGAAAAGTA"
+                     /modified_by="User"
+                     /label="RJ_00081Fa"
+     primer_bind     2944..2
+                     /created_by="User"
+                     /Sequence="TGAGCTTTGAGACCACGAAGT"
+                     /Hairpin_Tm="50.5"
+                     /Tm="59.6"
+                     /Self_Dimer_Tm="1.1"
+                     /%GC="47.6"
+                     /created_by="primer3"
+                     /Extension="CCTCTGGAGAGGCTGACTCTC"
+                     /modified_by="User"
+                     /label="RJ_00082Fa"
+     primer_bind     2944..3
+                     /Sequence="TGAGCTTTGAGACCACGAAGTG"
+                     /Hairpin_Tm="61.4"
+                     /Tm="60.8"
+                     /Self_Dimer_Tm="1.1"
+                     /%GC="50.0"
+                     /created_by="primer3"
+                     /Extension="CAAATCCACTCCTCGGCCTTGATTCTACA"
+                     /modified_by="User"
+                     /label="RJ_00170Fa"
+     gg_overhang     2947..2950
+                     /created_by="User"
+                     /modified_by="User"
+                     /label="pL0 G-3"
+     ligation        2947..2950
+                     /label="Ligation"
+     protein_bind    complement(2952..2957)
+                     /created_by="User"
+                     /label="BsaI Bind"
+     misc_feature    complement(2952..2957)
+                     /Recognition_pattern="GGTCTC(1/5)"
+                     /annotation_group="GGTCTC"
+                     /label="BsaI"
+                     /note="Geneious type: restriction site"
+ORIGIN      
+        1 gtggctcttc agtggacgaa agggcctcgt gatacgccta tttttatagg ttaatgtcat
+       61 gataataatg gtttcttaga cgtcaggtgg cacttttcgg ggaaatgtgc gcggaacccc
+      121 tatttgttta tttttctaaa tacattcaaa tatgtatccg ctcatgagac aataaccctg
+      181 ataaatgctt caataatatt gaaaaaggaa gagtatgcgc tcacgcaact ggtccagaac
+      241 cttgaccgaa cgcagcggtg gtaacggcgc agtggcggtt ttcatggctt gttatgactg
+      301 tttttttggg gtacagtcta tgcctcgggc atccaagcag caagcgcgtt acgccgtggg
+      361 tcgatgtttg atgttatgga gcagcaacga tgttacgcag cagggcagtc gccctaaaac
+      421 aaagttaaac atcatgaggg aagcggtgat cgccgaagta tcgactcaac tatcagaggt
+      481 agttggcgtc atcgagcgcc atctcgaacc gacgttgctg gccgtacatt tgtacggctc
+      541 cgcagtggat ggcggcctga agccacacag cgatattgat ttgctggtta cggtgaccgt
+      601 aaggcttgat gaaacaacgc ggcgagcttt gatcaacgac cttttggaaa cttcggcttc
+      661 ccctggagag agcgagattc tccgcgctgt agaagtcacc attgttgtgc acgacgacat
+      721 cattccgtgg cgttatccag ctaagcgcga actgcaattt ggagaatggc agcgcaatga
+      781 cattcttgca ggtatcttcg agccagccac gatcgacatt gatctggcta tcttgctgac
+      841 aaaagcaaga gaacatagcg ttgccttggt aggtccagcg gcggaggaac tctttgatcc
+      901 ggttcctgaa caggatctat ttgaggcgct aaatgaaacc ttaacgctat ggaactcgcc
+      961 gcccgactgg gctggcgatg agcgaaatgt agtgcttacg ttgtcccgca tttggtacag
+     1021 cgcagtaacc ggcaaaatcg cgccgaagga tgtcgctgcc gactgggcaa tggagcgcct
+     1081 gccggcccag tatcagcccg tcatacttga agctagacag gcttatcttg gacaagaaga
+     1141 agatcgcttg gcctcgcgcg cagatcagtt ggaagaattt gtccattacg taaaaggcga
+     1201 gatcaccaag gtagtcggca aataactgtc agaccaagtt tactcatata tactttagat
+     1261 tgatttaaaa cttcattttt aatttaaaag gatctaggtg aagatccttt ttgataatct
+     1321 catgaccaaa atcccttaac gtgagttttc gttccactga gcgtcagacc ccgtagaaaa
+     1381 gatcaaagga tcttcttgag atcctttttt tctgcgcgta atctgctgct tgcaaacaaa
+     1441 aaaaccaccg ctaccagcgg tggtttgttt gccggatcaa gagctaccaa ctctttttcc
+     1501 gaaggtaact ggcttcagca gagcgcagat accaaatact gtccttctag tgtagccgta
+     1561 gttaggccac cacttcaaga actctgtagc accgcctaca tacctcgctc tgctaatcct
+     1621 gttaccagtg gctgctgcca gtggcgataa gtcgtgtctt accgggttgg actcaagacg
+     1681 atagttaccg gataaggcgc agcggtcggg ctgaacgggg ggttcgtgca cacagcccag
+     1741 cttggagcga acgacctaca ccgaactgag atacctacag cgtgagctat gagaaagcgc
+     1801 cacgcttccc gaagggagaa aggcggacag gtatccggta agcggcaggg tcggaacagg
+     1861 agagcgcacg agggagcttc cagggggaaa cgcctggtat ctttatagtc ctgtcgggtt
+     1921 tcgccacctc tgacttgagc gtcgattttt gtgatgctcg tcaggggggc ggagcctatg
+     1981 gaaaaacgcc agcaacgcgg cctttttacg gttcctggcc ttttgctggc cttttgctca
+     2041 catgttcttt cctgcgttat cccctgattc tgtggataac cgtattaccg cctttgagtg
+     2101 agctgatacc gctcgccgca gccgaacgac cgagcgcagc gagtcagtga gcgaggaagc
+     2161 ggaagagcgc ccaatacgca aaccgcctct ccccgcgcgt tggccgattc attaatcact
+     2221 ctgtggtctc aaggtgccac catggtgagc gagctgatta aggagaacat gcacatgaag
+     2281 ctgtacatgg agggcaccgt gaacaaccac cacttcaagt gcacatccga gggcgaaggc
+     2341 aagccctacg agggcaccca gaccatgaga atcaaggcgg tcgagggcgg ccctctcccc
+     2401 ttcgccttcg acatcctggc taccagcttc atgtacggca gcaaaacctt catcaaccac
+     2461 acccagggca tccccgactt ctttaagcag tccttccccg agggcttcac atgggagaga
+     2521 gtcaccacat acgaagatgg gggcgtgctg accgctaccc aggacaccag cctccaggac
+     2581 ggctgcctca tctacaacgt caagatcaga ggggtgaact tcccatccaa cggccctgtg
+     2641 atgcagaaga aaacactcgg ctgggaggcc tccaccgaga cactgtaccc cgctgacggc
+     2701 ggcctggaag gcagagccga catggccctg aagctcgtgg gcgggggcca cctgatctgc
+     2761 aaccttaaga ccacatacag atccaagaaa cccgctaaga acctcaagat gcccggcgtc
+     2821 tactatgtgg acaggagact ggaaagaatc aaggaggccg acaaagagac atacgtcgag
+     2881 cagcacgagg tggctgtggc cagatactgc gacctcccta gcaaactggg gcacaaactt
+     2941 aattgagctt tgagaccacg aa
+//

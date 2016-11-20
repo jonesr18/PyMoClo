@@ -1,0 +1,206 @@
+LOCUS       pL0-P.1_hEF1a           3441 bp    DNA     circular UNA 26-AUG-2016
+DEFINITION  P.1 hEF1a.
+ACCESSION   urn.local...7p-4tny2no
+VERSION     urn.local...7p-4tny2no
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+FEATURES             Location/Qualifiers
+     misc_feature    145..168
+                     /created_by="User"
+                     /label="Pamp"
+                     /note="Geneious type: promoter prokaryotic"
+     misc_feature    complement(160..180)
+                     /Sequence="CAGGGTTATTGTCTCATGAGC"
+                     /Hairpin_Tm="None"
+                     /Tm="56.4"
+                     /Self_Dimer_Tm="13.2"
+                     /%GC="47.6"
+                     /created_by="primer3"
+                     /label="JH856R"
+                     /note="Geneious type: primer_bind_reverse"
+     CDS             215..1225
+                     /label="Sm/Sp no DraIII"
+     rep_origin      complement(1320..2002)
+                     /created_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="ColE1 Origin"
+     rep_origin      1984
+                     /label="ORI"
+     primer_bind     2084..2103
+                     /created_by="User"
+                     /Sequence="ATTACCGCCTTTGAGTGAGC"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="G00101"
+     protein_bind    2225..2230
+                     /created_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="BsaI Bind"
+     misc_feature    2225..2230
+                     /Recognition_pattern="GGTCTC(1/5)"
+                     /annotation_group="GGTCTC"
+                     /label="BsaI"
+                     /note="Geneious type: restriction site"
+     ligation        2232..2235
+                     /label="Ligation"
+     gg_overhang     2232..2235
+                     /created_by="User"
+                     /label="pL0 I-P"
+     promoter        2240..3413
+                     /modified_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="hEF1a Promoter"
+     protein_bind    2844..2849
+                     /created_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="SP1 Binding Site"
+     protein_bind    complement(2986..2991)
+                     /created_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="SP1 Binding Site"
+     protein_bind    2993..2998
+                     /created_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="SP1 Binding Site"
+     promoter        3032
+                     /created_by="User"
+                     /modified_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="Earliest +1 Site"
+     protein_bind    3101..3106
+                     /created_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="SP1 Binding Site"
+     protein_bind    3108..3114
+                     /created_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="AP-1 Binding Site"
+     protein_bind    3170..3186
+                     /created_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="Gal4 Binding Site"
+     misc_feature    3207..3212
+                     /Recognition_pattern="C^TCGAG"
+                     /annotation_group="CTCGAG"
+                     /label="XhoI"
+                     /note="Geneious type: restriction site"
+     protein_bind    complement(3261..3270)
+                     /created_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="NFkB Binding Site"
+     promoter        3319..3323
+                     /created_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="TATA Box?"
+     promoter        3395
+                     /created_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="Normal +1 Site"
+     misc_feature    complement(3400..3425)
+                     /Sequence="CCCTTGGGATCCACCTGAAATGGAAG"
+                     /Hairpin_Tm="49.1"
+                     /Tm="65.2"
+                     /Self_Dimer_Tm="5.6"
+                     /%GC="53.8"
+                     /created_by="primer3"
+                     /Extension="AATGGTCTCATCTG"
+                     /modified_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="7.21"
+                     /note="Geneious type: primer_bind_reverse"
+     misc_feature    3414..3419
+                     /Recognition_pattern="G^GATCC"
+                     /annotation_group="GGATCC"
+                     /label="BamHI"
+                     /note="Geneious type: restriction site"
+     ligation        3426..3429
+                     /label="Ligation"
+     gg_overhang     3426..3429
+                     /created_by="User"
+                     /label="pL0 P-5 v1"
+     protein_bind    complement(3431..3436)
+                     /created_by="User"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="BsaI Bind"
+     misc_feature    complement(3431..3436)
+                     /Recognition_pattern="GGTCTC(1/5)"
+                     /annotation_group="GGTCTC"
+                     /label="BsaI"
+                     /note="Geneious type: restriction site"
+ORIGIN      
+        1 gtggctcttc agtggacgaa agggcctcgt gatacgccta tttttatagg ttaatgtcat
+       61 gataataatg gtttcttaga cgtcaggtgg cacttttcgg ggaaatgtgc gcggaacccc
+      121 tatttgttta tttttctaaa tacattcaaa tatgtatccg ctcatgagac aataaccctg
+      181 ataaatgctt caataatatt gaaaaaggaa gagtatgcgc tcacgcaact ggtccagaac
+      241 cttgaccgaa cgcagcggtg gtaacggcgc agtggcggtt ttcatggctt gttatgactg
+      301 tttttttggg gtacagtcta tgcctcgggc atccaagcag caagcgcgtt acgccgtggg
+      361 tcgatgtttg atgttatgga gcagcaacga tgttacgcag cagggcagtc gccctaaaac
+      421 aaagttaaac atcatgaggg aagcggtgat cgccgaagta tcgactcaac tatcagaggt
+      481 agttggcgtc atcgagcgcc atctcgaacc gacgttgctg gccgtacatt tgtacggctc
+      541 cgcagtggat ggcggcctga agccacacag cgatattgat ttgctggtta cggtgaccgt
+      601 aaggcttgat gaaacaacgc ggcgagcttt gatcaacgac cttttggaaa cttcggcttc
+      661 ccctggagag agcgagattc tccgcgctgt agaagtcacc attgttgtgc acgacgacat
+      721 cattccgtgg cgttatccag ctaagcgcga actgcaattt ggagaatggc agcgcaatga
+      781 cattcttgca ggtatcttcg agccagccac gatcgacatt gatctggcta tcttgctgac
+      841 aaaagcaaga gaacatagcg ttgccttggt aggtccagcg gcggaggaac tctttgatcc
+      901 ggttcctgaa caggatctat ttgaggcgct aaatgaaacc ttaacgctat ggaactcgcc
+      961 gcccgactgg gctggcgatg agcgaaatgt agtgcttacg ttgtcccgca tttggtacag
+     1021 cgcagtaacc ggcaaaatcg cgccgaagga tgtcgctgcc gactgggcaa tggagcgcct
+     1081 gccggcccag tatcagcccg tcatacttga agctagacag gcttatcttg gacaagaaga
+     1141 agatcgcttg gcctcgcgcg cagatcagtt ggaagaattt gtccattacg taaaaggcga
+     1201 gatcaccaag gtagtcggca aataactgtc agaccaagtt tactcatata tactttagat
+     1261 tgatttaaaa cttcattttt aatttaaaag gatctaggtg aagatccttt ttgataatct
+     1321 catgaccaaa atcccttaac gtgagttttc gttccactga gcgtcagacc ccgtagaaaa
+     1381 gatcaaagga tcttcttgag atcctttttt tctgcgcgta atctgctgct tgcaaacaaa
+     1441 aaaaccaccg ctaccagcgg tggtttgttt gccggatcaa gagctaccaa ctctttttcc
+     1501 gaaggtaact ggcttcagca gagcgcagat accaaatact gtccttctag tgtagccgta
+     1561 gttaggccac cacttcaaga actctgtagc accgcctaca tacctcgctc tgctaatcct
+     1621 gttaccagtg gctgctgcca gtggcgataa gtcgtgtctt accgggttgg actcaagacg
+     1681 atagttaccg gataaggcgc agcggtcggg ctgaacgggg ggttcgtgca cacagcccag
+     1741 cttggagcga acgacctaca ccgaactgag atacctacag cgtgagctat gagaaagcgc
+     1801 cacgcttccc gaagggagaa aggcggacag gtatccggta agcggcaggg tcggaacagg
+     1861 agagcgcacg agggagcttc cagggggaaa cgcctggtat ctttatagtc ctgtcgggtt
+     1921 tcgccacctc tgacttgagc gtcgattttt gtgatgctcg tcaggggggc ggagcctatg
+     1981 gaaaaacgcc agcaacgcgg cctttttacg gttcctggcc ttttgctggc cttttgctca
+     2041 catgttcttt cctgcgttat cccctgattc tgtggataac cgtattaccg cctttgagtg
+     2101 agctgatacc gctcgccgca gccgaacgac cgagcgcagc gagtcagtga gcgaggaagc
+     2161 ggaagagcgc ccaatacgca aaccgcctct ccccgcgcgt tggccgattc attaatcact
+     2221 ctgtggtctc atactttaat tggctccggt gcccgtcagt gggcagagcg cacatcgccc
+     2281 acagtccccg agaagttgtg gggaggggtc ggcaattgaa ccggtgccta gagaaggtgg
+     2341 cgcggggtaa actgggaaag tgatgtcgtg tactggctcc gcctttttcc cgagggtggg
+     2401 ggagaaccgt atataagtgc agtagtcgcc gtgaacgttc tttttcgcaa cgggtttgcc
+     2461 gccagaacac aggtaagtgc cgtgtgtggt tcccgcgggc ctggcctctt tacgggttat
+     2521 ggcccttgcg tgccttgaat tacttccacc tggctgcagt acgtgattct tgatcccgag
+     2581 cttcgggttg gaagtgggtg ggagagttcg aggccttgcg cttaaggagc cccttcgcct
+     2641 cgtgcttgag ttgaggcctg gcctgggcgc tggggccgcc gcgtgcgaat ctggtggcac
+     2701 cttcgcgcct gtctcgctgc tttcgataag tctctagcca tttaaaattt ttgatgacct
+     2761 gctgcgacgc tttttttctg gcaagatagt cttgtaaatg cgggccaaga tctgcacact
+     2821 ggtatttcgg tttttggggc cgcgggcggc gacggggccc gtgcgtccca gcgcacatgt
+     2881 tcggcgaggc ggggcctgcg agcgcggcca ccgagaatcg gacgggggta gtctcaagct
+     2941 ggccggcctg ctctggtgcc tggcctcgcg ccgccgtgta tcgccccgcc ctgggcggca
+     3001 aggctggccc ggtcggcacc agttgcgtga gcggaaagat ggccgcttcc cggccctgct
+     3061 gcagggagct caaaatggag gacgcggcgc tcgggagagc gggcgggtga gtcacccaca
+     3121 caaaggaaaa gggcctttcc gtcctcagcc gtcgcttcat gtgactccac ggagtaccgg
+     3181 gcgccgtcca ggcacctcga ttagttctcg agcttttgga gtacgtcgtc tttaggttgg
+     3241 ggggaggggt tttatgcgat ggagtttccc cacactgagt gggtggagac tgaagttagg
+     3301 ccagcttggc acttgatgta attctccttg gaatttgccc tttttgagtt tggatcttgg
+     3361 ttcattctca agcctcagac agtggttcaa agtttttttc ttccatttca ggtggatccc
+     3421 aagggaatgt gagaccacga a
+//

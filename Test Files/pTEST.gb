@@ -1,0 +1,428 @@
+LOCUS       pTEST                   5137 bp    DNA              UNK 01-JAN-1980
+DEFINITION  .
+ACCESSION   pTEST
+VERSION     pTEST
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     Gibson_Overhang 5..49
+                     /created_by="User"
+                     /label="pL1 S3"
+                     /modified_by="User"
+     rep_origin      96..205
+                     /ApEinfo_fwdcolor="cyan"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+                     /ApEinfo_revcolor="green"
+                     /label="RK2 trfa"
+     misc_feature    complement(202..221)
+                     /Sequence="CCTGGCAGATCCTAGATGTG"
+                     /created_by="User"
+                     /label="JH1030R"
+                     /note="Geneious type: primer_bind_reverse"
+     misc_feature    210..215
+                     /ApEinfo_fwdcolor="cyan"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+                     /ApEinfo_revcolor="green"
+                     /label="BBb scar"
+     rep_origin      complement(233..915)
+                     /ApEinfo_fwdcolor="gray50"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+                     /ApEinfo_revcolor="gray50"
+                     /label="ColE1 origin"
+     misc_feature    831..836
+                     /ApEinfo_fwdcolor="cyan"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+                     /ApEinfo_label="BBb scar"
+                     /ApEinfo_revcolor="green"
+                     /label="BBb scar(1)"
+     misc_feature    complement(842..847)
+                     /ApEinfo_fwdcolor="cyan"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+                     /ApEinfo_label="BBb scar"
+                     /ApEinfo_revcolor="green"
+                     /label="BBb scar(4)"
+     misc_feature    928..933
+                     /ApEinfo_fwdcolor="cyan"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+                     /ApEinfo_label="BBb scar"
+                     /ApEinfo_revcolor="green"
+                     /label="BBb scar(2)"
+     misc_feature    complement(940..945)
+                     /ApEinfo_fwdcolor="cyan"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+                     /ApEinfo_label="BBb scar"
+                     /ApEinfo_revcolor="green"
+                     /label="BBb scar(5)"
+     CDS             1013..1870
+                     /ApEinfo_fwdcolor="#ff80ff"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+                     /ApEinfo_revcolor="green"
+                     /label="AmpR"
+                     /modified_by="User"
+     primer_bind     1701..1721
+                     /Sequence="CTCTCAAGGATCTTACCGCTG"
+                     /created_by="User"
+                     /label="JH1030F"
+     misc_feature    1708..1713
+                     /ApEinfo_fwdcolor="cyan"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+                     /ApEinfo_label="BBb scar"
+                     /ApEinfo_revcolor="green"
+                     /label="BBb scar(3)"
+     misc_feature    complement(1725..1730)
+                     /ApEinfo_fwdcolor="cyan"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+                     /ApEinfo_label="BBb scar"
+                     /ApEinfo_revcolor="green"
+                     /label="BBb scar(6)"
+     Gibson_Overhang 2017..2061
+                     /created_by="User"
+                     /label="pL1 S2"
+                     /modified_by="User"
+     gg_overhang     2062..2065
+                     /created_by="User"
+                     /label="pL0 I"
+     ligation        2062..2065
+                     /label="Ligation"
+     Insulator       2066..2635
+                     /created_by="User"
+                     /label="2x cHS4 Insulator"
+                     /modified_by="User"
+     Insulator       2090..2336
+                     /created_by="User"
+                     /label="cHS4 Core"
+     protein_bind    2144..2148
+                     /created_by="User"
+                     /label="CTCF Bind (Short)"
+     Insulator       2369..2615
+                     /created_by="User"
+                     /label="cHS4 Core"
+     protein_bind    2423..2427
+                     /created_by="User"
+                     /label="CTCF Bind (Short)"
+     ligation        2636..2639
+                     /label="Ligation"
+     gg_overhang     2636..2639
+                     /created_by="User"
+                     /label="pL0 I-P"
+     promoter        2644..3817
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /label="hEF1a Promoter"
+                     /modified_by="User"
+     protein_bind    3248..3253
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /created_by="User"
+                     /label="SP1 Binding Site"
+     protein_bind    complement(3390..3395)
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /created_by="User"
+                     /label="SP1 Binding Site"
+     protein_bind    3397..3402
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /created_by="User"
+                     /label="SP1 Binding Site"
+     promoter        3436
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /created_by="User"
+                     /label="Earliest +1 Site"
+                     /modified_by="User"
+     protein_bind    3505..3510
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /created_by="User"
+                     /label="SP1 Binding Site"
+     protein_bind    3512..3518
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /created_by="User"
+                     /label="AP-1 Binding Site"
+     protein_bind    3574..3590
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /created_by="User"
+                     /label="Gal4 Binding Site"
+     misc_feature    3611..3616
+                     /Recognition_pattern="C^TCGAG"
+                     /annotation_group="CTCGAG"
+                     /label="XhoI"
+                     /note="Geneious type: restriction site"
+     protein_bind    complement(3665..3674)
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /created_by="User"
+                     /label="NFkB Binding Site"
+     promoter        3723..3727
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /created_by="User"
+                     /label="TATA Box?"
+     promoter        3799
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /created_by="User"
+                     /label="Normal +1 Site"
+     misc_feature    complement(3804..3829)
+                     /%GC="53.8"
+                     /Extension="AATGGTCTCATCTG"
+                     /Hairpin_Tm="49.1"
+                     /Self_Dimer_Tm="5.6"
+                     /Sequence="CCCTTGGGATCCACCTGAAATGGAAG"
+                     /Tm="65.2"
+                     /Transferred_From="pRJ_00026"
+                     /Transferred_Similarity="100.00%"
+                     /created_by="primer3"
+                     /label="7.21"
+                     /modified_by="User"
+                     /note="Geneious type: primer_bind_reverse"
+     misc_feature    3818..3823
+                     /Recognition_pattern="G^GATCC"
+                     /annotation_group="GGATCC"
+                     /label="BamHI"
+                     /note="Geneious type: restriction site"
+     gg_overhang     3830..3833
+                     /created_by="User"
+                     /label="pL0 P-5 v1"
+     5'UTR           3834..3853
+                     /created_by="User"
+                     /label="Inert"
+     gg_overhang     3854..3857
+                     /created_by="User"
+                     /label="pL0 5-G"
+     ligation        3854..3857
+                     /label="Ligation"
+     motif           3858..3863
+                     /created_by="User"
+                     /label="Kozak"
+     misc_feature    3862..3867
+                     /Recognition_pattern="C^CATGG"
+                     /annotation_group="CCATGG"
+                     /label="NcoI"
+                     /note="Geneious type: restriction site"
+     CDS             3864..4568
+                     /created_by="User"
+                     /label="mKate2"
+     primer_bind     3864..3885
+                     /%GC="50.0"
+                     /Extension="TGGAGCAAACTCAGC"
+                     /Hairpin_Tm="None"
+                     /Self_Dimer_Tm="None"
+                     /Sequence="ATGGTGAGCGAGCTGATTAAGG"
+                     /Tm="60.5"
+                     /created_by="primer3"
+                     /label="RJ_00079Fa"
+                     /modified_by="User"
+     domain          3867..4565
+                     /created_by="User"
+                     /label="mKate2"
+     primer_bind     3867..3887
+                     /%GC="52.4"
+                     /Extension="GAAAGTGGAGCAAACTCAGC"
+                     /Hairpin_Tm="None"
+                     /Self_Dimer_Tm="None"
+                     /Sequence="GTGAGCGAGCTGATTAAGGAG"
+                     /Tm="58.5"
+                     /label="RJ_00116Fc"
+                     /modified_by="User"
+     primer_bind     3867..3887
+                     /%GC="52.4"
+                     /Extension="CAAATCCACTCCTCGGCCTTGATTCTACA"
+                     /Hairpin_Tm="None"
+                     /Self_Dimer_Tm="None"
+                     /Sequence="GTGAGCGAGCTGATTAAGGAG"
+                     /Tm="58.5"
+                     /created_by="primer3"
+                     /label="RJ_00117Fa"
+                     /modified_by="User"
+     misc_feature    complement(4540..4565)
+                     /%GC="42.3"
+                     /Extension="CGAGGAGTGGATTTGGAATGGGTTTCCC"
+                     /Hairpin_Tm="None"
+                     /Self_Dimer_Tm="None"
+                     /Sequence="ATTAAGTTTGTGCCCCAGTTTGCTAG"
+                     /Tm="62.2"
+                     /created_by="primer3"
+                     /label="RJ_00170Ra"
+                     /modified_by="User"
+                     /note="Geneious type: primer_bind_reverse"
+     misc_feature    complement(4546..4565)
+                     /%GC="40.0"
+                     /Extension="TTTTCGCTTTTTCTTTGGGGA"
+                     /Hairpin_Tm="None"
+                     /Self_Dimer_Tm="None"
+                     /Sequence="ATTAAGTTTGTGCCCCAGTT"
+                     /Tm="55.4"
+                     /label="RJ_00081Ra"
+                     /modified_by="User"
+                     /note="Geneious type: primer_bind_reverse"
+     misc_feature    complement(4546..4565)
+                     /%GC="40.0"
+                     /Extension="CAGCCTCTCCAGAGGGGGCAAGGA"
+                     /Hairpin_Tm="None"
+                     /Self_Dimer_Tm="None"
+                     /Sequence="ATTAAGTTTGTGCCCCAGTT"
+                     /Tm="55.4"
+                     /created_by="primer3"
+                     /label="RJ_00082Ra"
+                     /modified_by="User"
+                     /note="Geneious type: primer_bind_reverse"
+     primer_bind     4566..1624
+                     /%GC="47.6"
+                     /Extension="AAGAAAAAGCGAAAAGTA"
+                     /Hairpin_Tm="50.5"
+                     /Self_Dimer_Tm="1.1"
+                     /Sequence="TGAGCTTTGAGACCACGAAGT"
+                     /Tm="59.6"
+                     /created_by="User"
+                     /created_by="primer3"
+                     /label="RJ_00081Fa"
+                     /modified_by="User"
+     primer_bind     4566..1624
+                     /%GC="47.6"
+                     /Extension="CCTCTGGAGAGGCTGACTCTC"
+                     /Hairpin_Tm="50.5"
+                     /Self_Dimer_Tm="1.1"
+                     /Sequence="TGAGCTTTGAGACCACGAAGT"
+                     /Tm="59.6"
+                     /created_by="User"
+                     /created_by="primer3"
+                     /label="RJ_00082Fa"
+                     /modified_by="User"
+     primer_bind     4566..1625
+                     /%GC="50.0"
+                     /Extension="CAAATCCACTCCTCGGCCTTGATTCTACA"
+                     /Hairpin_Tm="61.4"
+                     /Self_Dimer_Tm="1.1"
+                     /Sequence="TGAGCTTTGAGACCACGAAGTG"
+                     /Tm="60.8"
+                     /created_by="primer3"
+                     /label="RJ_00170Fa"
+                     /modified_by="User"
+     gg_overhang     4569..4572
+                     /created_by="User"
+                     /label="pL0 G-3"
+     3'UTR           4573..4592
+                     /created_by="User"
+                     /label="Inert"
+     gg_overhang     4593..4596
+                     /created_by="User"
+                     /label="pL0 3-T"
+     terminator      4597..5137
+                     /created_by="User"
+                     /label="Rb Glob Terminator (T1)"
+                     /modified_by="User"
+     misc_feature    4598..4603
+                     /Recognition_pattern="G^AATTC"
+                     /annotation_group="GAATTC"
+                     /label="EcoRI"
+                     /note="Geneious type: restriction site"
+     polyA_signal    4746..4751
+                     /created_by="User"
+                     /label="Poly-A Signal"
+     polyA_signal    complement(4757..4762)
+                     /created_by="User"
+                     /label="Poly-A Signal"
+ORIGIN
+        1 cgctggtcta atacccaatc tctcgtctta tccagatgtt ttatacgcct taattaatag
+       61 ggataacagg gtaatatctt gccctgcacg aataccagcg accccttgcc caaatacttg
+      121 ccgtgggcct cggcctgaga gccaaaacac ttgatgcgga agaagtcggt gcgctcctgc
+      181 ttgtcgccgg catcgttgcg ccacatctag gatctgccag gaaccgtaaa aaggccgcgt
+      241 tgctggcgtt tttccatagg ctccgccccc ctgacgagca tcacaaaaat cgacgctcaa
+      301 gtcagaggtg gcgaaacccg acaggactat aaagatacca ggcgtttccc cctggaagct
+      361 ccctcgtgcg ctctcctgtt ccgaccctgc cgcttaccgg atacctgtcc gcctttctcc
+      421 cttcgggaag cgtggcgctt tctcatagct cacgctgtag gtatctcagt tcggtgtagg
+      481 tcgttcgctc caagctgggc tgtgtgcacg aaccccccgt tcagcccgac cgctgcgcct
+      541 tatccggtaa ctatcgtctt gagtccaacc cggtaagaca cgacttatcg ccactggcag
+      601 cagccactgg taacaggatt agcagagcga ggtatgtagg cggtgctaca gagttcttga
+      661 agtggtggcc taactacggc tacactagaa ggacagtatt tggtatctgc gctctgctga
+      721 agccagttac cttcggaaaa agagttggta gctcttgatc cggcaaacaa accaccgctg
+      781 gtagcggtgg tttttttgtt tgcaagcagc agattacgcg cagaaaaaaa ggatctcaag
+      841 aagatccttt gatcttttct acggggtctg acgctcagtg gaacgaaaac tcacgttaag
+      901 ggattttggt catgagatta tcaaaaagga tcttcaccta gatcctttta aattaaaaat
+      961 gaagttttaa atcaatctaa agtatatatg agtaaacttg gtctgacagt taccaatgct
+     1021 taatcagtga ggcacctatc tcagcgatct gtctatttcg ttcatccata gttgcctgac
+     1081 tccccgtcgt gtagataact acgatacggg agggcttacc atctggcccc agtgctgcaa
+     1141 tgataccgcg agaaccacgc tcaccggctc cagatttatc agcaataaac cagccagccg
+     1201 gaagggccga gcgcagaagt ggtcctgcaa ctttatccgc ctccatccag tctattaatt
+     1261 gttgccggga agctagagta agtagttcgc cagttaatag tttgcgcaac gttgttgcca
+     1321 ttgctacagg catcgtggtg tcacgctcgt cgtttggtat ggcttcattc agctccggtt
+     1381 cccaacgatc aaggcgagtt acatgatccc ccatgttgtg caaaaaagcg gttagctcct
+     1441 tcggtcctcc gatcgttgtc agaagtaagt tggccgcagt gttatcactc atggttatgg
+     1501 cagcactgca taattctctt actgtcatgc catccgtaag atgcttttct gtgactggtg
+     1561 agtactcaac caagtcattc tgagaatagt gtatgcggcg accgagttgc tcttgcccgg
+     1621 cgtcaatacg ggataatacc gcgccacata gcagaacttt aaaagtgctc atcattggaa
+     1681 aacgttcttc ggggcgaaaa ctctcaagga tcttaccgct gttgagatcc agttcgatgt
+     1741 aacccactcg tgcacccaac tgatcttcag catcttttac tttcaccagc gtttctgggt
+     1801 gagcaaaaac aggaaggcaa aatgccgcaa aaaagggaat aagggcgaca cggaaatgtt
+     1861 gaatactcat actcttcctt tttcaatatt attgaagcat ttatcagggt tattgtctca
+     1921 tgagcggata catatttgaa tgtatttaga aaaataaaca aataggggtt ccgcgcacga
+     1981 attggccagc gctgcattac cctgttatcc ctaaccggtg cgtttttatg cttgtagtat
+     2041 tgtataatgt ttttaagatc cggagttctg caattcatgt gatctgcgcc tgggagctca
+     2101 cggggacagc ccccccccaa agcccccagg gatgtaatta cgtccctccc ccgctagggg
+     2161 gcagcagcga gccgcccggg gctccgctcc ggtccggcgc tccccccgca tccccgagcc
+     2221 ggcagcgtgc ggggacagcc cgggcacggg gaaggtggca cgggatcgct ttcctctgaa
+     2281 cgcttctcgc tgctctttga gcctgcagac acctgggggg atacggggaa aaagctaggc
+     2341 tgaaagagga tcttagaatg acacgcgcct gggagctcac ggggacagcc cccccccaaa
+     2401 gcccccaggg atgtaattac gtccctcccc cgctaggggg cagcagcgag ccgcccgggg
+     2461 ctccgctccg gtccggcgct ccccccgcat ccccgagccg gcagcgtgcg gggacagccc
+     2521 gggcacgggg aaggtggcac gggatcgctt tcctctgaac gcttctcgct gctctttgag
+     2581 cctgcagaca cctgggggga tacggggaaa aagctggatc ataactcgac gtgcatactt
+     2641 taattggctc cggtgcccgt cagtgggcag agcgcacatc gcccacagtc cccgagaagt
+     2701 tgtggggagg ggtcggcaat tgaaccggtg cctagagaag gtggcgcggg gtaaactggg
+     2761 aaagtgatgt cgtgtactgg ctccgccttt ttcccgaggg tgggggagaa ccgtatataa
+     2821 gtgcagtagt cgccgtgaac gttctttttc gcaacgggtt tgccgccaga acacaggtaa
+     2881 gtgccgtgtg tggttcccgc gggcctggcc tctttacggg ttatggccct tgcgtgcctt
+     2941 gaattacttc cacctggctg cagtacgtga ttcttgatcc cgagcttcgg gttggaagtg
+     3001 ggtgggagag ttcgaggcct tgcgcttaag gagccccttc gcctcgtgct tgagttgagg
+     3061 cctggcctgg gcgctggggc cgccgcgtgc gaatctggtg gcaccttcgc gcctgtctcg
+     3121 ctgctttcga taagtctcta gccatttaaa atttttgatg acctgctgcg acgctttttt
+     3181 tctggcaaga tagtcttgta aatgcgggcc aagatctgca cactggtatt tcggtttttg
+     3241 gggccgcggg cggcgacggg gcccgtgcgt cccagcgcac atgttcggcg aggcggggcc
+     3301 tgcgagcgcg gccaccgaga atcggacggg ggtagtctca agctggccgg cctgctctgg
+     3361 tgcctggcct cgcgccgccg tgtatcgccc cgccctgggc ggcaaggctg gcccggtcgg
+     3421 caccagttgc gtgagcggaa agatggccgc ttcccggccc tgctgcaggg agctcaaaat
+     3481 ggaggacgcg gcgctcggga gagcgggcgg gtgagtcacc cacacaaagg aaaagggcct
+     3541 ttccgtcctc agccgtcgct tcatgtgact ccacggagta ccgggcgccg tccaggcacc
+     3601 tcgattagtt ctcgagcttt tggagtacgt cgtctttagg ttggggggag gggttttatg
+     3661 cgatggagtt tccccacact gagtgggtgg agactgaagt taggccagct tggcacttga
+     3721 tgtaattctc cttggaattt gccctttttg agtttggatc ttggttcatt ctcaagcctc
+     3781 agacagtggt tcaaagtttt tttcttccat ttcaggtgga tcccaaggga atgtaagttt
+     3841 gtacaaaaaa gagaggtgcc accatggtga gcgagctgat taaggagaac atgcacatga
+     3901 agctgtacat ggagggcacc gtgaacaacc accacttcaa gtgcacatcc gagggcgaag
+     3961 gcaagcccta cgagggcacc cagaccatga gaatcaaggc ggtcgagggc ggccctctcc
+     4021 ccttcgcctt cgacatcctg gctaccagct tcatgtacgg cagcaaaacc ttcatcaacc
+     4081 acacccaggg catccccgac ttctttaagc agtccttccc cgagggcttc acatgggaga
+     4141 gagtcaccac atacgaagat gggggcgtgc tgaccgctac ccaggacacc agcctccagg
+     4201 acggctgcct catctacaac gtcaagatca gaggggtgaa cttcccatcc aacggccctg
+     4261 tgatgcagaa gaaaacactc ggctgggagg cctccaccga gacactgtac cccgctgacg
+     4321 gcggcctgga aggcagagcc gacatggccc tgaagctcgt gggcgggggc cacctgatct
+     4381 gcaaccttaa gaccacatac agatccaaga aacccgctaa gaacctcaag atgcccggcg
+     4441 tctactatgt ggacaggaga ctggaaagaa tcaaggaggc cgacaaagag acatacgtcg
+     4501 agcagcacga ggtggctgtg gccagatact gcgacctccc tagcaaactg gggcacaaac
+     4561 ttaattgagc ttccactgga ttgtacaatt accaactgaa ttcactcctc aggtgcaggc
+     4621 tgcctatcag aaggtggtgg ctggtgtggc caatgccctg gctcacaaat accactgaga
+     4681 tctttttccc tctgccaaaa attatgggga catcatgaag ccccttgagc atctgacttc
+     4741 tggctaataa aggaaattta ttttcattgc aatagtgtgt tggaattttt tgtgtctctc
+     4801 actcggaagg acatatggga gggcaaatca tttaaaacat cagaatgagt atttggttta
+     4861 gagtttggca acatatgccc atatgctggc tgccatgaac aaaggttggc tataaagagg
+     4921 tcatcagtat atgaaacagc cccctgctgt ccattcctta ttccatagaa aagccttgac
+     4981 ttgaggttag atttttttta tattttgttt tgtgttattt ttttctttaa catccctaaa
+     5041 attttcctta catgttttac tagccagatt tttcctcctc tcctgactac tcccagtcat
+     5101 agctgtccct cttctcttat ggagatccct cgacctg
+//

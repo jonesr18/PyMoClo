@@ -1,0 +1,127 @@
+LOCUS       pBjh_3260               2821 bp    DNA     circular UNA 19-NOV-2016
+DEFINITION  I cHS4.
+ACCESSION   urn.local...35-4tnonzd
+VERSION     urn.local...35-4tnonzd
+KEYWORDS    .
+SOURCE      
+  ORGANISM  
+            .
+FEATURES             Location/Qualifiers
+     misc_feature    145..168
+                     /created_by="User"
+                     /label="Pamp"
+                     /note="Geneious type: promoter prokaryotic"
+     misc_feature    complement(160..180)
+                     /created_by="User"
+                     /Sequence="CAGGGTTATTGTCTCATGAGC"
+                     /label="JH856R"
+                     /note="Geneious type: primer_bind_reverse"
+     CDS             215..1225
+                     /label="Sm/Sp no DraIII"
+     protein_bind    complement(436..440)
+                     /created_by="User"
+                     /label="CTCF Bind (Short)"
+     rep_origin      complement(1320..2002)
+                     /created_by="User"
+                     /label="ColE1 origin"
+     protein_bind    complement(1870..1874)
+                     /created_by="User"
+                     /label="CTCF Bind (Short)"
+     rep_origin      1984
+                     /label="ORI"
+     primer_bind     2084..2103
+                     /created_by="User"
+                     /Sequence="ATTACCGCCTTTGAGTGAGC"
+                     /label="G00101"
+     protein_bind    2225..2230
+                     /created_by="User"
+                     /label="BsaI Bind"
+     misc_feature    2225..2230
+                     /Recognition_pattern="GGTCTC(1/5)"
+                     /annotation_group="GGTCTC"
+                     /label="BsaI"
+                     /note="Geneious type: restriction site"
+     gg_overhang     2232..2235
+                     /created_by="User"
+                     /label="pL0 I"
+     ligation        2232..2235
+                     /label="Ligation"
+     Insulator       2236..2805
+                     /created_by="User"
+                     /modified_by="User"
+                     /label="2x cHS4 Insulator"
+     Insulator       2260..2506
+                     /created_by="User"
+                     /label="cHS4 Core"
+     protein_bind    2314..2318
+                     /created_by="User"
+                     /label="CTCF Bind (Short)"
+     Insulator       2539..2785
+                     /created_by="User"
+                     /label="cHS4 Core"
+     protein_bind    2593..2597
+                     /created_by="User"
+                     /label="CTCF Bind (Short)"
+     gg_overhang     2806..2809
+                     /created_by="User"
+                     /label="pL0 I-P"
+     ligation        2806..2809
+                     /label="Ligation"
+     protein_bind    complement(2811..2816)
+                     /created_by="User"
+                     /label="BsaI Bind"
+     misc_feature    complement(2811..2816)
+                     /Recognition_pattern="GGTCTC(1/5)"
+                     /annotation_group="GGTCTC"
+                     /label="BsaI"
+                     /note="Geneious type: restriction site"
+ORIGIN      
+        1 gtggctcttc agtggacgaa agggcctcgt gatacgccta tttttatagg ttaatgtcat
+       61 gataataatg gtttcttaga cgtcaggtgg cacttttcgg ggaaatgtgc gcggaacccc
+      121 tatttgttta tttttctaaa tacattcaaa tatgtatccg ctcatgagac aataaccctg
+      181 ataaatgctt caataatatt gaaaaaggaa gagtatgcgc tcacgcaact ggtccagaac
+      241 cttgaccgaa cgcagcggtg gtaacggcgc agtggcggtt ttcatggctt gttatgactg
+      301 tttttttggg gtacagtcta tgcctcgggc atccaagcag caagcgcgtt acgccgtggg
+      361 tcgatgtttg atgttatgga gcagcaacga tgttacgcag cagggcagtc gccctaaaac
+      421 aaagttaaac atcatgaggg aagcggtgat cgccgaagta tcgactcaac tatcagaggt
+      481 agttggcgtc atcgagcgcc atctcgaacc gacgttgctg gccgtacatt tgtacggctc
+      541 cgcagtggat ggcggcctga agccacacag cgatattgat ttgctggtta cggtgaccgt
+      601 aaggcttgat gaaacaacgc ggcgagcttt gatcaacgac cttttggaaa cttcggcttc
+      661 ccctggagag agcgagattc tccgcgctgt agaagtcacc attgttgtgc acgacgacat
+      721 cattccgtgg cgttatccag ctaagcgcga actgcaattt ggagaatggc agcgcaatga
+      781 cattcttgca ggtatcttcg agccagccac gatcgacatt gatctggcta tcttgctgac
+      841 aaaagcaaga gaacatagcg ttgccttggt aggtccagcg gcggaggaac tctttgatcc
+      901 ggttcctgaa caggatctat ttgaggcgct aaatgaaacc ttaacgctat ggaactcgcc
+      961 gcccgactgg gctggcgatg agcgaaatgt agtgcttacg ttgtcccgca tttggtacag
+     1021 cgcagtaacc ggcaaaatcg cgccgaagga tgtcgctgcc gactgggcaa tggagcgcct
+     1081 gccggcccag tatcagcccg tcatacttga agctagacag gcttatcttg gacaagaaga
+     1141 agatcgcttg gcctcgcgcg cagatcagtt ggaagaattt gtccattacg taaaaggcga
+     1201 gatcaccaag gtagtcggca aataactgtc agaccaagtt tactcatata tactttagat
+     1261 tgatttaaaa cttcattttt aatttaaaag gatctaggtg aagatccttt ttgataatct
+     1321 catgaccaaa atcccttaac gtgagttttc gttccactga gcgtcagacc ccgtagaaaa
+     1381 gatcaaagga tcttcttgag atcctttttt tctgcgcgta atctgctgct tgcaaacaaa
+     1441 aaaaccaccg ctaccagcgg tggtttgttt gccggatcaa gagctaccaa ctctttttcc
+     1501 gaaggtaact ggcttcagca gagcgcagat accaaatact gtccttctag tgtagccgta
+     1561 gttaggccac cacttcaaga actctgtagc accgcctaca tacctcgctc tgctaatcct
+     1621 gttaccagtg gctgctgcca gtggcgataa gtcgtgtctt accgggttgg actcaagacg
+     1681 atagttaccg gataaggcgc agcggtcggg ctgaacgggg ggttcgtgca cacagcccag
+     1741 cttggagcga acgacctaca ccgaactgag atacctacag cgtgagctat gagaaagcgc
+     1801 cacgcttccc gaagggagaa aggcggacag gtatccggta agcggcaggg tcggaacagg
+     1861 agagcgcacg agggagcttc cagggggaaa cgcctggtat ctttatagtc ctgtcgggtt
+     1921 tcgccacctc tgacttgagc gtcgattttt gtgatgctcg tcaggggggc ggagcctatg
+     1981 gaaaaacgcc agcaacgcgg cctttttacg gttcctggcc ttttgctggc cttttgctca
+     2041 catgttcttt cctgcgttat cccctgattc tgtggataac cgtattaccg cctttgagtg
+     2101 agctgatacc gctcgccgca gccgaacgac cgagcgcagc gagtcagtga gcgaggaagc
+     2161 ggaagagcgc ccaatacgca aaccgcctct ccccgcgcgt tggccgattc attaatcact
+     2221 ctgtggtctc aggagttctg caattcatgt gatctgcgcc tgggagctca cggggacagc
+     2281 ccccccccaa agcccccagg gatgtaatta cgtccctccc ccgctagggg gcagcagcga
+     2341 gccgcccggg gctccgctcc ggtccggcgc tccccccgca tccccgagcc ggcagcgtgc
+     2401 ggggacagcc cgggcacggg gaaggtggca cgggatcgct ttcctctgaa cgcttctcgc
+     2461 tgctctttga gcctgcagac acctgggggg atacggggaa aaagctaggc tgaaagagga
+     2521 tcttagaatg acacgcgcct gggagctcac ggggacagcc cccccccaaa gcccccaggg
+     2581 atgtaattac gtccctcccc cgctaggggg cagcagcgag ccgcccgggg ctccgctccg
+     2641 gtccggcgct ccccccgcat ccccgagccg gcagcgtgcg gggacagccc gggcacgggg
+     2701 aaggtggcac gggatcgctt tcctctgaac gcttctcgct gctctttgag cctgcagaca
+     2761 cctgggggga tacggggaaa aagctggatc ataactcgac gtgcatactt gagaccacga
+     2821 a
+//
