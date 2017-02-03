@@ -28,14 +28,25 @@ from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 from Bio.Alphabet import IUPAC
 
+# Constants
 NUM_COLS = 11
 VECTOR_IDX = 2
 SIZE_IDX = 4
 L0_IDX = [2, 6, 7, 8, 9, 10, 11]
 G00101 = 'ATTACCGCCTTTGAGTGAGC'
 JH856R = 'CAGGGTTATTGTCTCATGAGC'
-L0_PATH = r'C:/Users/Ross/Dropbox (MIT)/APE/Genbank pL0s/'
-L1_PATH = r'C:/Users/Ross/Dropbox (MIT)/APE/Genbank pL1s/'
+
+# Asus
+L0_PATH = r'C:/Users/jones/Dropbox (MIT)/APE/Genbank pL0s/'
+L1_PATH = r'C:/Users/jones/Dropbox (MIT)/APE/Genbank pL1s/'
+WORKBOOK = r'C:/Users/jones/Dropbox (MIT)/Team Herpes/Ross/RDJ Plasmids.xlsx'
+
+# HP
+# L0_PATH = r'C:/Users/Ross/Dropbox (MIT)/APE/Genbank pL0s/'
+# L1_PATH = r'C:/Users/Ross/Dropbox (MIT)/APE/Genbank pL1s/'
+# WORKBOOK = r'C:/Users/Ross/Dropbox (MIT)/Team Herpes/Ross/RDJ Plasmids.xlsx'
+
+# Debug status
 DEBUG = False
 
 def getFilename(file_ID):
@@ -99,9 +110,8 @@ def digest(seq_record):
 
 
 if __name__ == '__main__':
-    book = xw.Book(r'C:/Users/Ross/Dropbox (MIT)/Team Herpes/Ross/RDJ Plasmids.xlsx')
+    book = xw.Book(WORKBOOK)
     pL1_sheet = book.sheets['pL1s']
-
     for i, pL1_ID in enumerate(pL1_sheet.range('A1:A10000')):
         # | 1  |   2    |  3  |  4   | 5  | 6 | 7 | 8 | 9 | 10 | 11 | 12  | ....
         # | ID | Vector | Glc | Size | ng | I | P | 5 | G | 3  | T  | Lig | ....
@@ -124,11 +134,16 @@ if __name__ == '__main__':
               '. Expected size: ' + str(pL1_row(SIZE_IDX).value))
 
         # Iterate over pL0 files in pL1 part
+        missingPiece = False
         for j in L0_IDX:
             pL0_ID = pL1_row(j)
-            # Find filename in the dir of pL0s
-            pL0_filename = getFilename(pL0_ID)
-            if not pL0_filename: continue # Skip if no such filename
+            # Find filename in the dir of pL0st
+            try:
+            	pL0_filename = getFilename(pL0_ID)
+            except Exception as e:
+            	missingPiece = True
+            	print(e)
+            	break
 
             # Read and parse file
             # with open(r'../Test Files/' + filename, 'rU') as f:
@@ -148,6 +163,10 @@ if __name__ == '__main__':
                             (fragment.seq.count(G00101) > 1 and \
                             fragment.seq.count(JH856R) > 1)):
                         moclo_product += fragment
+        
+        # If missing a piece, break out of loop and don't assemble
+        if missingPiece:
+        	continue
 
         # Write to file
         writeL1(moclo_product, pL1_ID)
