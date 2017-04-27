@@ -21,7 +21,8 @@ TODO:
 
 import xlwings as xw
 from pathlib import Path
-from Bio.Restriction import BsaI
+from Bio.Restriction import BsaI	# Enzyme used for moclo
+from Bio.Restriction import BsmBI	# For digesting FuRJ
 import Bio.GenBank as gb
 from Bio import SeqIO
 from Bio.Seq import Seq
@@ -29,148 +30,191 @@ from Bio.SeqRecord import SeqRecord
 from Bio.Alphabet import IUPAC
 
 # Constants
-NUM_COLS = 11
-VECTOR_IDX = 2
-SIZE_IDX = 4
-L0_IDX = [2, 6, 7, 8, 9, 10, 11]
-G00101 = 'ATTACCGCCTTTGAGTGAGC'
-JH856R = 'CAGGGTTATTGTCTCATGAGC'
+LV_BB_NAME = 'pLV-RJ'				# Name of the LV cloning backbone
+VECTOR_IDX = 2						# (1-based) Index of vector to clone into for quick check
+SIZE_IDX = 4						# (1-based) Index of epected size in worksheet
+L0_IDX = [2, 6, 7, 8, 9, 10, 11]	# (1-based) Index of pL0 parts in worksheet, including vector
+L0_FRAG_SIZE = 2247					# L0 Backbone size (excluded during assembly)
+GIBSON_VEC_FRAG_SIZE = 1130			# Gibson position vector backbone size (excluded during assembly)
+FURJ_VEC_FRAG_SIZE = 1054			# FuRJ Lenti vector backbone size (excluded during assembly)
+EXCLUDED_SIZES = [L0_FRAG_SIZE, GIBSON_VEC_FRAG_SIZE, FURJ_VEC_FRAG_SIZE]
+G00101 = 'ATTACCGCCTTTGAGTGAGC'		# Forward L0 sequencing primer for additional help IDing L0 backbones
+JH856R = 'CAGGGTTATTGTCTCATGAGC'	# Reverse L0 "                                      "
 
 # Asus
-L0_PATH = r'C:/Users/jones/Dropbox (MIT)/APE/Genbank pL0s/'
-L1_PATH = r'C:/Users/jones/Dropbox (MIT)/APE/Genbank pL1s/'
-WORKBOOK = r'C:/Users/jones/Dropbox (MIT)/Team Herpes/Ross/RDJ Plasmids.xlsx'
+L0_PATH = r'C:/Users/jones/Dropbox (MIT)/APE/Genbank pL0s/'		# Directory of L0 .gb files
+L1_PATH = r'C:/Users/jones/Dropbox (MIT)/APE/Genbank pL1s/'		# Directory to deposit L1 .gb files
+VV_PATH = r'C:/Users/jones/Dropbox (MIT)/APE/Genbank pVVs/'		# Directory to deposit VV .gb files
+WORKBOOK = r'C:/Users/jones/Dropbox (MIT)/Team Herpes/Ross/RDJ Plasmids.xlsx' # Excel workbook with L0-->L1/VV mappings
 
 # HP
 # L0_PATH = r'C:/Users/Ross/Dropbox (MIT)/APE/Genbank pL0s/'
 # L1_PATH = r'C:/Users/Ross/Dropbox (MIT)/APE/Genbank pL1s/'
+# VV_PATH = r'C:/Users/Ross/Dropbox (MIT)/APE/Genbank pVVs/'
 # WORKBOOK = r'C:/Users/Ross/Dropbox (MIT)/Team Herpes/Ross/RDJ Plasmids.xlsx'
 
 # Debug status
 DEBUG = False
 
 def getFilename(file_ID):
+	'''
+	Finds a .gb, .ape, or .str file associated with the given ID.
+	If none is found, the method returns <None>
+	'''
+
+	# Handle None-types
+	if not file_ID.value: raise Exception('File ID is None')
+
+	# Search for files in dir, accept the first match (prioritize gb > ape > str)
+	for ext in ['.gb', '.gbk', '.ape', '.str']:
+		if Path(L0_PATH + str(file_ID.value) + ext).exists():
+			if DEBUG: print('\nFound file: ' + str(file_ID.value) + ext)
+
+			return str(file_ID.value) + ext
+
+	raise Exception('No file found for ID: ' + str(file_ID.value))
+
+
+def digest(seq_record, enzyme):
+	'''
+	Performs a digestion on the given record using the given enzyme, assuming a 
+	circular sequence. The fragments are then returned as sequence records.
+
+	Returns None for any sequence inputs with fewer than 2 BsaI cut sites.
+	'''
+
+	# Problem w/ catalyze seems to be that it generates Seq
+	#   instead of SeqRecord, which does not preserve annotations,
+	#   so we do a manual search and "digestion" ourselves
+	cut_pos = enzyme.search(seq_record.seq, linear = False)
+
+	# There must be at least two cuts to generate fragments
+	if len(cut_pos) < 2: return None
+
+	# Auto-extract all fragments "internal" to the sequence
+	#   There will be some sequence left over on the "edges",
+	#   which must be manually dealt with, since python
+	#   indexing doesn't work around corners.
+	fragments = [seq_record[cut_pos[i] - 1 : cut_pos[i + 1] - 1] for i in range(len(cut_pos) - 1)]
+	fragments.append(seq_record[cut_pos[-1] - 1 :] + seq_record[: cut_pos[0] - 1])
+
+	if DEBUG: print(fragments)
+	return fragments
+
+
+def processMoclo(worksheet, path, start_idx = 1):
+	'''
+	Takes in a worksheet of pL0-->pL1/pVV mappings and generates sequences 
+	for the constructs, writing them to file. 
+	'''
+
+	for i, assembly_ID in enumerate(worksheet.range('A1:A10000')):
+    	# | 1  |   2    |  3  |  4   | 5  | 6 | 7 | 8 | 9 | 10 | 11 | 12  | ....
+    	# | ID | Vector | Glc | Size | ng | I | P | 5 | G | 3  | T  | Lig | ....
+		
+		if i < start_idx:
+			continue
+
+		if DEBUG:
+			print(assembly_ID)
+			print(assembly_ID.value)
+
+		# Skip empty and spacer rows
+		if not assembly_ID.value or assembly_ID.value == 'ID': continue
+
+		# Extract entire row - note indexing is in [ ] since enum i is 0-based idx
+		assembly_row = worksheet[i, : L0_IDX[-1]]
+
+		# Skip rows where an ID is assigned but not any parts
+		if not assembly_row(VECTOR_IDX).value: continue
+
+		# Prepare moclo product seq record
+		moclo_product = SeqRecord(Seq('', IUPAC.ambiguous_dna))
+		print('\nAssembling: ' + assembly_ID.value + \
+			  '. Expected size: ' + str(assembly_row(SIZE_IDX).value))
+
+		# Setup dictionary of outputs
+		moclo_products = dict()
+
+		# Iterate over pL0 files for assembly
+		missingPiece = False
+		for j in L0_IDX:
+			pL0_ID = assembly_row(j)
+			# Find filename in the dir of pL0st
+			try:
+				pL0_filename = getFilename(pL0_ID)
+			except Exception as e:
+				missingPiece = True
+				print(e)
+				break
+
+			# Read and parse file
+			with open(L0_PATH + pL0_filename, 'rU') as f:
+				pL0_record = SeqIO.read(f, format = 'gb')
+				print('\tAdding: ' + pL0_ID.value)
+
+				# Cut w/ BsaI unless looking at LV backbone, which is cut w/ BsmBI
+				if str(pL0_ID.value) == LV_BB_NAME:
+					fragments = digest(pL0_record, BsmBI)
+				else:
+					fragments = digest(pL0_record, BsaI)
+
+				for i, fragment in enumerate(fragments):
+					if DEBUG: 
+						print('Fragment {0}: {1} bp'.format(i, len(fragment)))
+						print(type(fragment))
+						print(type(fragment.seq))
+
+					# Check if the fragment is the size of known vectors, or if it has
+					# at least one of both G00101 and JH856R sites, implying backbone
+					if not (len(fragment) in EXCLUDED_SIZES or \
+							(fragment.seq.count(G00101) >= 1 and \
+							 fragment.seq.count(JH856R) >= 1)):
+						moclo_product += fragment
+		
+		# If missing a piece, break out of loop and don't assemble
+		if missingPiece:
+			continue
+
+		# Save to dictionary
+		# print(str(assembly_ID.value))
+		# moclo_products[str(assembly_ID.value)] = moclo_product
+		# print(moclo_products[str(assembly_ID.value)])
+		
+		print("\t\tFinished assembling " + assembly_ID.value + \
+		  '. Size = ' + str(len(moclo_product)))
+		if DEBUG: 
+			print("\nMoclo Product End:\n")
+			print(moclo_product)
+
+		writeAssembly(moclo_product, assembly_ID.value, path)
+
+def writeAssembly(moclo_product, name, path):
+	'''
+    Writes the given moclo product to a genbank file with the given name in 
+    the given path. The GenBank ID is set as the filename as well.
     '''
-    Finds a .gb, .ape, or .str file associated with the given ID.
-    If none is found, the method returns <None>
-    '''
 
-    # Handle None-types
-    if not file_ID.value: raise Exception('File ID is None')
-
-    # Search for files in dir, accept the first match (prioritize gb > ape > str)
-    for ext in ['.gb', '.gbk', '.ape', '.str']:
-        if Path(L0_PATH + str(file_ID.value) + ext).exists():
-            if DEBUG: print('\nFound file: ' + str(file_ID.value) + ext)
-            return str(file_ID.value) + ext
-
-    raise Exception('No file found for ID: ' + str(file_ID.value))
+	# Write file
+	filename = path + name + '.gb'
+	print('\t\tWriting file: ' + filename)
+	with open(filename, 'w') as f:
+		moclo_product.seq.alphabet = IUPAC.ambiguous_dna
+		moclo_product.id = name
+		moclo_product.name = name
+		SeqIO.write(moclo_product, f, 'gb')
 
 
-def writeL1(pL1_seq, file_ID):
-    '''
-    Writes the given pL1 record to a genbank file in the pL1 path with the given ID as a name.
-    '''
-
-    if DEBUG:
-        print("\nMoclo Product End:\n")
-        print(moclo_product)
-        print('\tSize: ', len(moclo_product))
-
-    with open(L1_PATH + file_ID.value + '.gb', 'w') as f:
-        moclo_product.seq.alphabet = IUPAC.ambiguous_dna
-        moclo_product.id = file_ID.value
-        moclo_product.name = file_ID.value
-        SeqIO.write(moclo_product, f, 'gb')
-
-
-def digest(seq_record):
-    '''
-    Performs a digestion on the given record using BsaI, assuming a circular sequence. The fragments are then returned as sequence records.
-
-    Returns None for any sequence inputs with fewer than 2 BsaI cut sites.
-    '''
-    # Problem w/ catalyze seems to be that it generates Seq
-    #   instead of SeqRecord, which does not preserve annotations,
-    #   so we do a manual search and "digestion" ourselves
-    cut_pos = BsaI.search(seq_record.seq, linear = False)
-
-    # There must be at least two cuts to generate fragments
-    if len(cut_pos) < 2: return None
-
-    # Auto-extract all fragments "internal" to the sequence
-    #   There will be some sequence left over on the "edges",
-    #   which must be manually dealt with, since python
-    #   indexing doesn't work around corners.
-    fragments = [seq_record[cut_pos[i] - 1 : cut_pos[i + 1] - 1] for i in range(len(cut_pos) - 1)]
-    fragments.append(seq_record[cut_pos[-1] - 1 :] + seq_record[: cut_pos[0] - 1])
-
-    if DEBUG: print(fragments)
-    return fragments
-
+##### Main Method #####
 
 if __name__ == '__main__':
-    book = xw.Book(WORKBOOK)
-    pL1_sheet = book.sheets['pL1s']
-    for i, pL1_ID in enumerate(pL1_sheet.range('A1:A10000')):
-        # | 1  |   2    |  3  |  4   | 5  | 6 | 7 | 8 | 9 | 10 | 11 | 12  | ....
-        # | ID | Vector | Glc | Size | ng | I | P | 5 | G | 3  | T  | Lig | ....
+    
+	# Open worksheet with mappings
+	book = xw.Book(WORKBOOK)
+    
+	# Generate moclo products
+	pL1_products = processMoclo(book.sheets['pL1s'], L1_PATH, 871)
+	pVV_products = processMoclo(book.sheets['pVVs'], VV_PATH)
+	
 
-        # print(ID)
-        # print(ID.value)
-
-        # Skip empty and spacer rows
-        if not pL1_ID.value or pL1_ID.value == 'ID': continue
-
-        # Extract entire row - note indexing is in [ ] since enum i is 0-based idx
-        pL1_row = pL1_sheet[i, : NUM_COLS]
-
-        # Skip rows where an ID is assigned but not any parts
-        if not pL1_row(VECTOR_IDX).value: continue
-
-        # Prepare pL1 output product
-        moclo_product = SeqRecord(Seq('', IUPAC.ambiguous_dna))
-        print('\nAssembling: ' + pL1_ID.value + \
-              '. Expected size: ' + str(pL1_row(SIZE_IDX).value))
-
-        # Iterate over pL0 files in pL1 part
-        missingPiece = False
-        for j in L0_IDX:
-            pL0_ID = pL1_row(j)
-            # Find filename in the dir of pL0st
-            try:
-            	pL0_filename = getFilename(pL0_ID)
-            except Exception as e:
-            	missingPiece = True
-            	print(e)
-            	break
-
-            # Read and parse file
-            # with open(r'../Test Files/' + filename, 'rU') as f:
-            #     print(f.readline())
-            with open(L0_PATH + pL0_filename, 'rU') as f:
-                pL0_record = SeqIO.read(f, format = 'gb')
-                print('\tAdding: ' + pL0_ID.value)
-
-                fragments = digest(pL0_record)
-
-                for i, fragment in enumerate(fragments):
-                    # print('Fragment {0}: {1} bp'.format(i, len(fragment)))
-
-                    # Check if the fragment is the size of known vectors, or if it has
-                    # at least one of both G00101 and JH856R sites, implying backbone
-                    if not (len(fragment) == 2247 or len(fragment) == 1130 or \
-                            (fragment.seq.count(G00101) > 1 and \
-                            fragment.seq.count(JH856R) > 1)):
-                        moclo_product += fragment
-        
-        # If missing a piece, break out of loop and don't assemble
-        if missingPiece:
-        	continue
-
-        # Write to file
-        writeL1(moclo_product, pL1_ID)
-        print("\t\tFinished assembling " + pL1_ID.value + \
-              '. Size = ' + str(len(moclo_product)))
-
-        # TODO Check size is equal to size in excel sheet / calculated from formula
+	# TODO Check size is equal to size in excel sheet / calculated from formula
