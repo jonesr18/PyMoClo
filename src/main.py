@@ -130,14 +130,16 @@ def processMoclo(worksheet, path, start_idx = 1):
 
 		# Prepare moclo product seq record
 		moclo_product = SeqRecord(Seq('', IUPAC.ambiguous_dna))
+		moclo_product_description = ""
 		print('\nAssembling: ' + assembly_ID.value + \
 			  '. Expected size: ' + str(assembly_row(SIZE_IDX).value))
 
 		# Setup dictionary of outputs
-		moclo_products = dict()
+		# moclo_products = dict()
 
 		# Iterate over pL0 files for assembly
 		missingPiece = False
+		isLVRJ = False
 		for j in L0_IDX:
 			pL0_ID = assembly_row(j)
 			# Find filename in the dir of pL0st
@@ -152,10 +154,21 @@ def processMoclo(worksheet, path, start_idx = 1):
 			with open(L0_PATH + pL0_filename, 'rU') as f:
 				pL0_record = SeqIO.read(f, format = 'gb')
 				print('\tAdding: ' + pL0_ID.value)
+				if (j > L0_IDX[0]): 	# Parts
+					# In .gb files, the description comes in form "[Vector] Description [more description]."
+					# 	We want to keep everything after [Vector] together and exclude the period.
+					pL0_description = pL0_record.description[:-1].split(' ', 1)[1]
+					if (j > L0_IDX[1]): # 2nd+ Part
+						moclo_product_description += '_' +  pL0_description
+					else: 				# 1st Part
+						moclo_product_description += pL0_description
+				else:					# Vector
+					moclo_product_description += '[' + pL0_ID.value + '] ' # Use vector name from Excel Sheet
 
 				# Cut w/ BsaI unless looking at LV backbone, which is cut w/ BsmBI
 				if str(pL0_ID.value) == LV_BB_NAME:
 					fragments = digest(pL0_record, BsmBI)
+					isLVRJ = True
 				else:
 					fragments = digest(pL0_record, BsaI)
 
@@ -181,18 +194,24 @@ def processMoclo(worksheet, path, start_idx = 1):
 		# moclo_products[str(assembly_ID.value)] = moclo_product
 		# print(moclo_products[str(assembly_ID.value)])
 		
+		# If a pLV-RJ, move starting point by 1000 bases so it looks 
+		# nicer when linearized in Geneious
+		if isLVRJ:
+			moclo_product = moclo_product[1000:] + moclo_product[:1000]
+
 		print("\t\tFinished assembling " + assembly_ID.value + \
 		  '. Size = ' + str(len(moclo_product)))
 		if DEBUG: 
 			print("\nMoclo Product End:\n")
 			print(moclo_product)
 
-		writeAssembly(moclo_product, assembly_ID.value, path)
+		writeAssembly(moclo_product, assembly_ID.value, moclo_product_description, path)
 
-def writeAssembly(moclo_product, name, path):
+def writeAssembly(moclo_product, name, description, path):
 	'''
-    Writes the given moclo product to a genbank file with the given name in 
-    the given path. The GenBank ID is set as the filename as well.
+    Writes the given moclo product to a genbank file with the given name 
+    and description in the given path. The GenBank ID is set as the 
+    filename as well.
     '''
 
 	# Write file
@@ -202,6 +221,7 @@ def writeAssembly(moclo_product, name, path):
 		moclo_product.seq.alphabet = IUPAC.ambiguous_dna
 		moclo_product.id = name
 		moclo_product.name = name
+		moclo_product.description = description
 		SeqIO.write(moclo_product, f, 'gb')
 
 
@@ -213,7 +233,7 @@ if __name__ == '__main__':
 	book = xw.Book(WORKBOOK)
     
 	# Generate moclo products
-	pL1_products = processMoclo(book.sheets['pL1s'], L1_PATH, 871)
+	# pL1_products = processMoclo(book.sheets['pL1s'], L1_PATH)
 	pVV_products = processMoclo(book.sheets['pVVs'], VV_PATH)
 	
 
