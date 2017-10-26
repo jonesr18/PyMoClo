@@ -102,7 +102,7 @@ def digest(seq_record, enzyme):
 	return fragments
 
 
-def processMoclo(worksheet, path, start_idx = 1):
+def processMoclo(worksheet, path, start_idx = 1, end_idx = float('inf')):
 	'''
 	Takes in a worksheet of pL0-->pL1/pVV mappings and generates sequences 
 	for the constructs, writing them to file. 
@@ -114,6 +114,8 @@ def processMoclo(worksheet, path, start_idx = 1):
 		
 		if i < start_idx:
 			continue
+		if i > end_idx:
+			break
 
 		if DEBUG:
 			print(assembly_ID)
@@ -233,8 +235,8 @@ if __name__ == '__main__':
 	book = xw.Book(WORKBOOK)
     
 	# Generate moclo products
-	# pL1_products = processMoclo(book.sheets['pL1s'], L1_PATH)
-	pVV_products = processMoclo(book.sheets['pVVs'], VV_PATH)
+	pL1_products = processMoclo(book.sheets['pL1s'], L1_PATH, start_idx = 1528, end_idx = 1600)
+	# pVV_products = processMoclo(book.sheets['pVVs'], VV_PATH)
 	
 
 	# TODO Check size is equal to size in excel sheet / calculated from formula
