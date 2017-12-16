@@ -231,11 +231,23 @@ def writeAssembly(moclo_product, name, description, path):
 
 if __name__ == '__main__':
     
+	# Defualt parameters
+	startIdx = 1
+	endIdx = 10**5
+
+    # Handle argument inputs
+	import sys
+	argv = sys.argv[1:]
+	if len(argv) > 0:
+		startIdx = int(argv[0])
+		if len(argv) > 1:
+			endIdx = int(argv[1])
+	
 	# Open worksheet with mappings
 	book = xw.Book(WORKBOOK)
     
 	# Generate moclo products
-	pL1_products = processMoclo(book.sheets['pL1s'], L1_PATH, start_idx = 1528, end_idx = 1600)
+	pL1_products = processMoclo(book.sheets['pL1s'], L1_PATH, start_idx = startIdx, end_idx = endIdx)
 	# pVV_products = processMoclo(book.sheets['pVVs'], VV_PATH)
 	
 
