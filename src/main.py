@@ -33,7 +33,8 @@ from Bio.Alphabet import IUPAC
 LV_BB_NAME = 'pLV-RJ'				# Name of the LV cloning backbone
 VECTOR_IDX = 2						# (1-based) Index of vector to clone into for quick check
 SIZE_IDX = 4						# (1-based) Index of epected size in worksheet
-L0_IDX = [2, 6, 7, 8, 9, 10, 11]	# (1-based) Index of pL0 parts in worksheet, including vector
+L0_IDX_L1 = [2, 6, 7, 8, 9, 10, 11]	# (1-based) Index of pL0 parts in pL1s worksheet, including vector
+L0_IDX_VV = [2, 7, 8, 9, 10, 11, 12]# (1-based) Index of pL0 parts in pVVs worksheet, including vector
 L0_FRAG_SIZE = 2247					# L0 Backbone size (excluded during assembly)
 GIBSON_VEC_FRAG_SIZE = 1130			# Gibson position vector backbone size (excluded during assembly)
 FURJ_VEC_FRAG_SIZE = 1054			# FuRJ Lenti vector backbone size (excluded during assembly)
@@ -117,6 +118,14 @@ def processMoclo(worksheet, path, start_idx = 1, end_idx = float('inf')):
 		if i > end_idx:
 			break
 
+		# Determine class of assembly
+		if 'pVVs' in path:
+			isLVRJ = True
+			L0_IDX = L0_IDX_VV
+		else:
+			isLVRJ = False
+			L0_IDX = L0_IDX_L1
+
 		if DEBUG:
 			print(assembly_ID)
 			print(assembly_ID.value)
@@ -141,7 +150,6 @@ def processMoclo(worksheet, path, start_idx = 1, end_idx = float('inf')):
 
 		# Iterate over pL0 files for assembly
 		missingPiece = False
-		isLVRJ = False
 		for j in L0_IDX:
 			pL0_ID = assembly_row(j)
 			# Find filename in the dir of pL0st
@@ -159,7 +167,13 @@ def processMoclo(worksheet, path, start_idx = 1, end_idx = float('inf')):
 				if (j > L0_IDX[0]): 	# Parts
 					# In .gb files, the description comes in form "[Vector] Description [more description]."
 					# 	We want to keep everything after [Vector] together and exclude the period.
-					pL0_description = pL0_record.description[:-1].split(' ', 1)[1]
+					if (pL0_record.description[-1] == '.'):
+						rec_description = pL0_record.description[:-1]
+					else:
+						rec_description = pL0_record.description
+					if DEBUG: 
+						print(rec_description)
+					pL0_description = rec_description.split(' ', 1)[1]
 					if (j > L0_IDX[1]): # 2nd+ Part
 						moclo_product_description += '_' +  pL0_description
 					else: 				# 1st Part
@@ -170,7 +184,6 @@ def processMoclo(worksheet, path, start_idx = 1, end_idx = float('inf')):
 				# Cut w/ BsaI unless looking at LV backbone, which is cut w/ BsmBI
 				if str(pL0_ID.value) == LV_BB_NAME:
 					fragments = digest(pL0_record, BsmBI)
-					isLVRJ = True
 				else:
 					fragments = digest(pL0_record, BsaI)
 
@@ -232,23 +245,30 @@ def writeAssembly(moclo_product, name, description, path):
 if __name__ == '__main__':
     
 	# Defualt parameters
+	sheet = 'both'
 	startIdx = 1
 	endIdx = 10**5
+	
 
     # Handle argument inputs
 	import sys
 	argv = sys.argv[1:]
 	if len(argv) > 0:
-		startIdx = int(argv[0])
+		sheet = str(argv[0])
 		if len(argv) > 1:
-			endIdx = int(argv[1])
+			startIdx = int(argv[1])
+			if len(argv) > 2:
+				endIdx = int(argv[2])
 	
 	# Open worksheet with mappings
 	book = xw.Book(WORKBOOK)
     
 	# Generate moclo products
-	pL1_products = processMoclo(book.sheets['pL1s'], L1_PATH, start_idx = startIdx, end_idx = endIdx)
-	# pVV_products = processMoclo(book.sheets['pVVs'], VV_PATH)
-	
+	if sheet in ['pL1s', 'both']:
+		pL1_products = processMoclo(book.sheets['pL1s'], L1_PATH, start_idx = startIdx, end_idx = endIdx)
+	elif sheet in ['pVVs', 'both']:
+		pVV_products = processMoclo(book.sheets['pVVs'], VV_PATH, start_idx = startIdx, end_idx = endIdx)
+	else:
+		raise Exception('Sheet not recognized: ', sheet)
 
 	# TODO Check size is equal to size in excel sheet / calculated from formula
